@@ -1,0 +1,8 @@
+// This grammar describes the input language that describes a logic language
+Language ::= ValuesDef BasisDefs
+Law ::= "Commutative" | "Associative" | "HasIdentity" Val | "SelfDual"
+LawsDef ::= "Laws:" {Law";"}
+BasisDefs ::= {Func ":" FuncDef "#" LawsDef ";"}
+Func ::= [a-zA-Z_]([a-zA-Z_0-9])*
+ValuesDef ::= "Values:" Val (","Val)*
+Val ::= ([a-Z0-9])+
